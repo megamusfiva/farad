@@ -2,13 +2,8 @@ import Colors from "../../constants/Colors";
 
 export default {
 
-	top:{
-		flex: 0.4,
-		paddingTop: 20
-	},
-
-	main:{
-		flex: 2
+	top: {
+		paddingTop: 10
 	},
 
 	title: {
@@ -22,38 +17,28 @@ export default {
 		paddingTop: 10
 	},
 
-	forgotWrap: {
-		alignItems: 'flex-end'
-	},
-
-	textCenter: {
-		color: Colors.text.grey,
-		alignSelf: 'center',
-		paddingTop: 20
-	},
-
-	sosmedCard: {
-		paddingTop: 20,
-		flexDirection: 'row',
-		justifyContent: 'center'
-	},
-
 	bottom: {
 		color: Colors.text.grey,
 		fontWeight: 'bold',
 		fontSize: 15
 	},
-	
-	forgot: {
+
+	signin: {
 		color: Colors.text.green,
 		fontWeight: 'bold',
 		fontSize: 15
 	},
 
-	bottomWrap: {
+	sosmedCard: {
+		paddingVertical: 20,
+		flexDirection: 'row',
+		justifyContent: 'center'
+	},
+
+	textCenter: {
+		color: Colors.text.grey,
 		alignSelf: 'center',
-		flex: 0.1,
-		flexDirection: 'row'
-	}
+		paddingBottom: 20
+	},
 
 };

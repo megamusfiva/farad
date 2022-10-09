@@ -2,10 +2,6 @@ import Colors from "../../constants/Colors";
 
 export default {
 
-	container: {
-		backgroundColor: Colors.white.default,
-	},
-
 	top:{
 		flex: 0.4,
 		paddingTop: 20

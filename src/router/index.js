@@ -4,7 +4,15 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { Navigation } from '../helpers';
 
-import { Login, OnBoarding, Register } from '../screens';
+import {
+	Login,
+	OnBoarding,
+	Register,
+	Verify,
+	SignUp,
+	ForgotPassword,
+	ResetPassword
+} from '../screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,7 +42,16 @@ const MainRouter = ({ onboarded }) => {
 				<Stack.Screen name="OnBoarding" component={ OnBoarding } />
 
 				<Stack.Screen name="Login" component={ Login } />
+
 				<Stack.Screen name="Register" component={ Register } />
+
+				<Stack.Screen name="Verify" component={ Verify } />
+
+				<Stack.Screen name="SignUp" component={ SignUp } />
+
+				<Stack.Screen name="ForgotPassword" component={ ForgotPassword } />
+
+				<Stack.Screen name="ResetPassword" component={ ResetPassword } />
 
 			</Stack.Navigator>
 

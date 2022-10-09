@@ -6,14 +6,14 @@ import Navigation from '../../helpers/Navigation';
 
 import style from './style';
 
-const Register = () => {
+const ResetPassword = () => {
 
 	const topComponent = () => (
 		<View style={ style.top }>
 
-			<Text style={ style.title }>Enter Your Phone Number</Text>
+			<Text style={ style.title }>Reset Password</Text>
 
-			<Text style={ style.titleThin }>Sign up with your phone number</Text>
+			<Text style={ style.titleThin }>Please create new password</Text>
 
 		</View>
 	);
@@ -22,11 +22,16 @@ const Register = () => {
 		<View style={ style.main }>
 
 			<InputField
-				title={ 'Phone Number' }
-				placeholder={ 'Enter your phone number' }
-				type={ 'numeric' } />
+				title={ 'Create New Password' }
+				placeholder={ 'Enter new Password' }
+				type={ 'password' } />
 
-			<CustomButton.DefaultButton title={ 'Continue' } onPress={ () => { Navigation.push('Verify', {}); } } />
+			<InputField
+				title={ 'Confirm New Password' }
+				placeholder={ 'Confirm your new password' }
+				type={ 'password' } />
+
+			<CustomButton.DefaultButton title={ 'Continue' } onPress={ () => { Navigation.replace('Login', {}); } } />
 		</View>
 	);
 
@@ -36,7 +41,7 @@ const Register = () => {
 
 			<Text style={ style.bottom }>Already have an account? </Text>
 
-			<TouchableOpacity onPress={ () => { Navigation.replace('Login', {}); } }>
+			<TouchableOpacity onPress={ () => { Navigation.push('Login', {}); } }>
 
 				<Text style={ style.signin }>Sign In Here</Text>
 
@@ -60,4 +65,4 @@ const Register = () => {
 	);
 };
 
-export default Register;
+export default ResetPassword;

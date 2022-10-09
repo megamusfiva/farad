@@ -1,8 +1,6 @@
 import React from "react";
 import { SafeAreaView, ScrollView, StatusBar, View } from "react-native";
 
-import { Header } from "../../components";
-
 import style from "./style";
 
 const PageContainer = ({ scrollView, ...props }) => {
@@ -26,8 +24,6 @@ const PageContainer = ({ scrollView, ...props }) => {
 				backgroundColor={ 'transparent' }
 				barStyle={ props.statusBarstyle ?? "dark-content" } />
 
-			<Header />
-
 			{ scrollView ?
 
 				<ScrollView>
@@ -36,6 +32,7 @@ const PageContainer = ({ scrollView, ...props }) => {
 
 				</ScrollView>
 				:
+
 				isView()
 			}
 

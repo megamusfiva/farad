@@ -16,7 +16,7 @@ const DefaultButton = (props) => {
 					}
 				]
 			}
-			onPress={ () => { props.onPress; } }>
+			onPress={ props.onPress}>
 
 			<Text style={ style.button }>{ props.title }</Text>
 

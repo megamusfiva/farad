@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-import { InputField, PageContainer, CustomButton } from '../../components';
+import { Header, InputField, PageContainer, CustomButton } from '../../components';
 import Navigation from '../../helpers/Navigation';
 
 import style from './style';
@@ -31,7 +31,7 @@ const Login = () => {
 				placeholder={ 'Enter your Password' }
 				type={ 'password' } />
 
-			<TouchableOpacity style={ style.forgotWrap } onPress={ () => { } }>
+			<TouchableOpacity style={ style.forgotWrap } onPress={ () => { Navigation.push('ForgotPassword', {}); } }>
 
 				<Text style={ style.forgot }>Forgot Your Password?</Text>
 
@@ -55,11 +55,11 @@ const Login = () => {
 
 	const bottomComponent = () => (
 
-		<View style={  style.bottomWrap }>
+		<View style={ style.bottomWrap }>
 
 			<Text style={ style.bottom }>Don’t have an account?</Text>
 
-			<TouchableOpacity onPress={ () => {	Navigation.replace('Register', {}); } }>
+			<TouchableOpacity onPress={ () => { Navigation.replace('Register', {}); } }>
 
 				<Text style={ style.forgot }> Sign Up Here</Text>
 
@@ -69,7 +69,9 @@ const Login = () => {
 	);
 
 	return (
-		<PageContainer padding style={ style.container } >
+		<PageContainer>
+
+			<Header />
 
 			{ topComponent() }
 

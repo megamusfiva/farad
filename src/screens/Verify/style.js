@@ -2,12 +2,12 @@ import Colors from "../../constants/Colors";
 
 export default {
 
-	top:{
+	top: {
 		flex: 0.4,
 		paddingTop: 20
 	},
 
-	main:{
+	main: {
 		flex: 2
 	},
 
@@ -22,29 +22,19 @@ export default {
 		paddingTop: 10
 	},
 
-	forgotWrap: {
-		alignItems: 'flex-end'
-	},
-
-	textCenter: {
-		color: Colors.text.grey,
+	button: {
+		padding: 20,
 		alignSelf: 'center',
-		paddingTop: 20
-	},
-
-	sosmedCard: {
-		paddingTop: 20,
-		flexDirection: 'row',
-		justifyContent: 'center'
+		fontWeight: 'bold',
+		fontSize: 15
 	},
 
 	bottom: {
 		color: Colors.text.grey,
-		fontWeight: 'bold',
 		fontSize: 15
 	},
-	
-	forgot: {
+
+	resent: {
 		color: Colors.text.green,
 		fontWeight: 'bold',
 		fontSize: 15
@@ -52,7 +42,6 @@ export default {
 
 	bottomWrap: {
 		alignSelf: 'center',
-		flex: 0.1,
 		flexDirection: 'row'
 	}
 
