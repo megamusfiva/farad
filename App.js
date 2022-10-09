@@ -4,19 +4,19 @@ import MainRouter from './src/router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const App = () => {
-	const [onboarded, setOnboarded] = useState();
+	// const [onboarded, setOnboarded] = useState();
 
-	useEffect(() => {
-		getStorage();
-	}, []);
+	// useEffect(() => {
+	// 	getStorage();
+	// }, []);
 
-	const getStorage = async () => {
-		const onboarded = await AsyncStorage.getItem('ONBOARDED');
-		setOnboarded(JSON.parse(onboarded));
-	};
+	// const getStorage = async () => {
+	// 	const onboarded = await AsyncStorage.getItem('ONBOARDED');
+	// 	setOnboarded(JSON.parse(onboarded));
+	// };
 
 	return (
-		<MainRouter onboarded={ onboarded } />
+		<MainRouter />
 	);
 };
 

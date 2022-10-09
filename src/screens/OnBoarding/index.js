@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import { useWindowDimensions, View, Text, TouchableOpacity, Image, FlatList } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import Colors from '../../constants/Colors';
 
 import Navigation from '../../helpers/Navigation';
 import style from './style';
@@ -47,39 +47,49 @@ const OnBoarding = () => {
 	};
 
 	const onPressFinish = async () => {
-		await AsyncStorage.setItem('ONBOARDED', 'true');
-		Navigation.replace('Login', {});
+		Navigation.push('Login', {});
 	};
 
 	const renderer = ({ item, index }) => (
 		< View style={ { height: windowheight, width: windowWidth } }>
+
 			<View>
+
 				<Image style={ { height: windowheight / 1.5, width: windowWidth } } source={ item.img } />
-				<View style={ { height: windowheight / 1.5, width: windowWidth, backgroundColor: 'rgba(0,0,0,0.5)', position: 'absolute', top: 0, zIndex: 1 } }></View>
+
+				<View style={ { height: windowheight / 1.5, width: windowWidth, backgroundColor: Colors.black.opacityHalf, position: 'absolute', top: 0, zIndex: 1 } }></View>
+
 			</View>
+
 			<View style={ style.OnBoardingCard }>
 
 				<Image style={ style.imageCard } source={ require('../../assets/farad_logo.png') } />
+
 				<Text style={ style.OnBoardingCardTitle }>{ item.title }</Text>
+
 				<Text style={ style.OnBoardingCardDesc }>{ item.desc }</Text>
+
 				<View style={ style.OnBoardingCardButton }>
 					{
 						index > 0 ?
 							<TouchableOpacity
-								style={ { borderRadius: 20, height: 40, width: 40, backgroundColor: '#39AAB4', justifyContent: 'center', alignItems: 'center' } }
+								style={ style.gSlideButton }
 								onPress={ () => {
 									slideChangedBtn(index - 1);
 								} }>
+
 								<Image source={ require('../../assets/left-arrow.png') } />
-							</TouchableOpacity> :
+
+							</TouchableOpacity>
+							:
 							<View
-								style={ { borderRadius: 20, height: 40, width: 40, backgroundColor: '#FFF', justifyContent: 'center', alignItems: 'center' } }>
+								style={ style.wSlideButton }>
 							</View>
 					}
 
 					{ index != 2 ?
 						<TouchableOpacity
-							style={ { borderRadius: 20, height: 40, width: 40, backgroundColor: '#39AAB4', justifyContent: 'center', alignItems: 'center' } }
+							style={ style.gSlideButton }
 							onPress={ () => {
 								if (index < data.length) {
 									slideChangedBtn(index + 1);
@@ -104,28 +114,36 @@ const OnBoarding = () => {
 
 	const dots = () => (
 		<View style={ style.dotGroup }>
+
 			{ data.map((_, index) => (
-				<View key={ index } style={ [style.dot, sliderState.item === index ? style.dotActive : null] } />
+
+				<View
+					key={ index }
+					style={ [style.dot, sliderState.item === index ? style.dotActive : null] } />
+
 			)) }
+
 		</View>
 	);
 
 	const SkipBtn = () => (
 
-		<TouchableOpacity style={ { position: 'absolute', color: '#FFF', top: 80, right: 20, zIndex: 2 } }
+		<TouchableOpacity style={ style.skipButton }
 			onPress={ () => {
 				onPressFinish();
-			} }
-		>
+			} }>
+
 			{ sliderState.item != 2 ?
-				<Text style={ { color: '#FFF' } }>Skip for now</Text> :
+				<Text style={ style.white }>Skip for now</Text> :
 				null
 			}
+
 		</TouchableOpacity>
 	);
 
 	return (
 		<View>
+
 			<FlatList
 				data={ data }
 				renderItem={ renderer }
@@ -145,9 +163,13 @@ const OnBoarding = () => {
 			/>
 
 			<View style={ style.controls }>
+
 				{ dots() }
+
 			</View>
+
 			{ SkipBtn() }
+
 		</View>
 	);
 };

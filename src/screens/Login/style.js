@@ -1,21 +1,63 @@
+import Colors from "../../constants/Colors";
+
 export default {
+
 	container: {
-		flex: 1,
-		backgroundColor: '#FFFF'
+		backgroundColor: Colors.white.default,
 	},
-	item: {
-		position: 'absolute',
-		paddingTop: 100,
-		padding: 15,
+
+	top:{
+		flex: 0.4,
+		paddingTop: 20
 	},
+
+	main:{
+		flex: 2
+	},
+
 	title: {
-		paddingTop: 30,
 		fontSize: 25,
 		fontWeight: '700',
-		color: '#231F20',
+		color: Colors.text.black,
 	},
+
 	titleThin: {
-		color: '#828D8A',
+		color: Colors.text.grey,
 		paddingTop: 10
+	},
+
+	forgotWrap: {
+		alignItems: 'flex-end'
+	},
+
+	textCenter: {
+		color: Colors.text.grey,
+		alignSelf: 'center',
+		paddingTop: 20
+	},
+
+	sosmedCard: {
+		paddingTop: 20,
+		flexDirection: 'row',
+		justifyContent: 'center'
+	},
+
+	bottom: {
+		color: Colors.text.grey,
+		fontWeight: 'bold',
+		fontSize: 15
+	},
+	
+	forgot: {
+		color: Colors.text.green,
+		fontWeight: 'bold',
+		fontSize: 15
+	},
+
+	bottomWrap: {
+		alignSelf: 'center',
+		flex: 0.1,
+		flexDirection: 'row'
 	}
+
 };

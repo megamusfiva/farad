@@ -1,7 +1,11 @@
 import Header from './Header';
-import TextInput from './TextInput';
+import InputField from './InputField';
+import CustomButton from './Button';
+import PageContainer from './PageContainer';
 
 export {
 	Header,
-	TextInput
+	InputField,
+	CustomButton,
+	PageContainer
 }; 
