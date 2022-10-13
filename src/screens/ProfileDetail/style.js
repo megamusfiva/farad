@@ -6,17 +6,12 @@ const windowWidth = Dimensions.get('window').width;
 export default {
 
 	container: {
-		flex: 1,
 		paddingHorizontal: 30,
 		width: windowWidth
 	},
 
 	top: {
-		flex: 0.4,
-	},
-
-	main: {
-		flex: 2
+		paddingTop: 10
 	},
 
 	title: {
@@ -42,10 +37,16 @@ export default {
 		fontSize: 15
 	},
 
-	bottomWrap: {
+	sosmedCard: {
+		paddingVertical: 20,
+		flexDirection: 'row',
+		justifyContent: 'center'
+	},
+
+	textCenter: {
+		color: Colors.text.grey,
 		alignSelf: 'center',
-		flex: 0.1,
-		flexDirection: 'row'
-	}
+		paddingBottom: 20
+	},
 
 };

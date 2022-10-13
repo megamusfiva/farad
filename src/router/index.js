@@ -11,7 +11,8 @@ import {
 	Verify,
 	SignUp,
 	ForgotPassword,
-	ResetPassword
+	ResetPassword,
+	ProfileDetail
 } from '../screens';
 
 const Stack = createNativeStackNavigator();
@@ -52,6 +53,8 @@ const MainRouter = ({ onboarded }) => {
 				<Stack.Screen name="ForgotPassword" component={ ForgotPassword } />
 
 				<Stack.Screen name="ResetPassword" component={ ResetPassword } />
+
+				<Stack.Screen name="ProfileDetail" component={ ProfileDetail } />
 
 			</Stack.Navigator>
 

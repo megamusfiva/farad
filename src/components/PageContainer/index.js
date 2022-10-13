@@ -5,9 +5,10 @@ import style from "./style";
 
 const PageContainer = ({ scrollView, ...props }) => {
 
+
 	const isView = () => (
 
-		<View style={ style.viewContainer }>
+		<View style={ [style.viewContainer, { width: props.width, paddingHorizontal: props.padding }] }>
 
 			{ props.children }
 

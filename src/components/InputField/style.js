@@ -22,9 +22,9 @@ export default {
 		alignItems: 'center'
 	},
 
-	icon:{
-		zIndex: 3, 
-		right: 30, 
+	icon: {
+		zIndex: 3,
+		right: 30,
 		alignItems: 'center'
 	}
 

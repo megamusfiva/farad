@@ -16,6 +16,12 @@ export default {
 		borderRadius: 15,
 	},
 
+	buttonWrapDisabled: {
+		marginTop: 30,
+		backgroundColor: Colors.grey.present,
+		borderRadius: 15,
+	},
+
 	sosmedWrap: {
 		margin: 7,
 		padding: 10,

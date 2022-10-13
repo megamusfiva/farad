@@ -7,5 +7,5 @@ export {
 	Header,
 	InputField,
 	CustomButton,
-	PageContainer
+	PageContainer,
 }; 

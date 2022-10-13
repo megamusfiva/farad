@@ -30,12 +30,14 @@ const InputField = (props) => {
 		<View style={ style.container }>
 
 			<TextInput
-				style={ 
-					[ style.input, 
-						{ borderWidth: 1, 
-						  borderColor: 
-						  	onFocus ? Colors.text.green : 
-								!valid ? Colors.red.error : 'transparent' }] }
+				style={
+					[style.input,
+					{
+						borderWidth: 1,
+						borderColor:
+							onFocus ? Colors.text.green :
+								!valid ? Colors.red.error : 'transparent'
+					}] }
 				onChangeText={ (text) => Validation(text) }
 				placeholder={ placeholder }
 				secureTextEntry={ eyeSlash }
@@ -50,7 +52,7 @@ const InputField = (props) => {
 					style={ style.icon }
 					onPress={ () => { setEyeSlash(false); } } >
 
-					<FontAwesome name="eye" size={ 15 } color= { Colors.grey.default }/>
+					<FontAwesome name="eye" size={ 15 } color={ Colors.grey.default } />
 
 				</TouchableOpacity>
 				:
@@ -58,7 +60,7 @@ const InputField = (props) => {
 					style={ style.icon }
 					onPress={ () => { setEyeSlash(true); } } >
 
-					<FontAwesome name="eye-slash" size={ 15 } color= { Colors.grey.default } />
+					<FontAwesome name="eye-slash" size={ 15 } color={ Colors.grey.default } />
 
 				</TouchableOpacity>
 

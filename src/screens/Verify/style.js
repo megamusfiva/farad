@@ -1,16 +1,20 @@
 import Colors from "../../constants/Colors";
+import { Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
 
 export default {
 
+	container: {
+		flex: 1,
+		paddingHorizontal: 30,
+		width: windowWidth
+	},
+
 	top: {
-		flex: 0.4,
+		// flex: 1,
 		paddingTop: 20
 	},
-
-	main: {
-		flex: 2
-	},
-
 	title: {
 		fontSize: 25,
 		fontWeight: '700',
@@ -43,6 +47,23 @@ export default {
 	bottomWrap: {
 		alignSelf: 'center',
 		flexDirection: 'row'
+	},
+
+	textInput: {
+
+		padding: 10,
+		margin: 8,
+		width: 55,
+		height: 55,
+		backgroundColor: Colors.grey.light,
+		borderRadius: 5,
+	},
+
+	otpInputContainer: {
+		flexDirection: 'row',
+		justifyContent: 'center',
+		alignItems: 'center',
+		paddingVertical: 30
 	}
 
 };

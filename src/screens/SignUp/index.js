@@ -1,79 +1,141 @@
-import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import {
+	React,
+	useState
+} from 'react';
+import {
+	View,
+	FlatList,
+	useWindowDimensions
+} from 'react-native';
 
-import { Header, InputField, PageContainer, CustomButton } from '../../components';
-import Navigation from '../../helpers/Navigation';
+import {
+	Header,
+	PageContainer
+} from '../../components';
+import {
+	Register,
+	Verify,
+	ProfileDetail
+} from '../../screens';
 
 import style from './style';
 
 const SignUp = () => {
 
-	const topComponent = () => (
-		<View style={ style.top }>
+	const windowWidth = useWindowDimensions().width;
 
-			<Text style={ style.title }>Sign Up</Text>
+	const data = [
+		{
+			'title': 'Enter Your Phone Number',
+			'desc': 'Sign up with your phone number'
+		},
+		{
+			'title': 'Verify Your Phone Number',
+			'desc': 'We had just sent you 4 digit OTP code to your phone number'
+		}, {
+			'title': 'Sign Up',
+			'desc': 'Sign Up to continue using iScoot.'
+		},
+	];
 
-			<Text style={ style.titleThin }>Sign Up to continue using iScoot.</Text>
+	const slideChanged = e => {
+		const item = Math.round(e.nativeEvent.contentOffset.x / windowWidth);
+
+		setSliderState({
+			item: item,
+			offset: item * windowWidth,
+		});
+	};
+
+	const [sliderState, setSliderState] = useState({
+		item: 0,
+		offset: 0,
+	});
+
+	const [doSlide, setDoSlide] = useState(0);
+
+	const addTodo = () => {
+		setDoSlide((c) => c + 1);
+		slideChangedBtn(doSlide);
+	};
+
+	const slideChangedBtn = (item) => {
+		const offset = (item + 1) * windowWidth;
+		listViewRef.scrollToOffset({ offset: offset, animated: true });
+	};
+
+
+	const renderer = ({ item, index }) => (
+		<View>
+
+			{ index == 0 ?
+
+				<Register
+					title={ item.title }
+					desc={ item.desc }
+					addTodo={ addTodo } /> :
+
+				index == 1 ?
+					<Verify
+						title={ item.title }
+						desc={ item.desc }
+						addTodo={ addTodo } /> :
+
+					<ProfileDetail
+						title={ item.title }
+						desc={ item.desc }
+						addTodo={ addTodo } /> }
 
 		</View>
 	);
 
-	const mainComponent = () => (
-		<View >
-			<View style={ style.sosmedCard }>
+	const dots = () => (
+		<View style={ style.dotGroup }>
 
-				<CustomButton.SosmedButton image={ 'google' } />
+			{ data.map((_, index) => (
 
-				<CustomButton.SosmedButton image={ 'facebook' } />
+				<View
+					key={ index }
+					style={ [style.dot, sliderState.item === index ? style.dotActive : null] } />
 
-				<CustomButton.SosmedButton image={ 'apple' } />
+			)) }
 
-			</View>
-
-			<Text style={ style.textCenter }>or sign up manually</Text>
-
-			<InputField
-				title={ 'Name' }
-				placeholder={ 'Enter your name' } />
-
-			<InputField
-				title={ 'Username' }
-				placeholder={ 'Enter your Username' } />
-
-			<InputField
-				title={ 'Email' }
-				placeholder={ 'Enter your Email' } />
-
-			<InputField
-				title={ 'Password' }
-				placeholder={ 'Enter your Password' }
-				type={ 'password' } />
-
-			<InputField
-				title={ 'Confirm Password' }
-				placeholder={ 'Enter your Password' }
-				type={ 'password' } />
-
-			<InputField
-				title={ 'Date of Birth' }
-				placeholder={ 'Choose your date of birth' } />
-
-			<InputField
-				title={ 'Address' }
-				placeholder={ 'Enter your Address' } />
-
-			<CustomButton.DefaultButton title={ 'Sign Up' } onPress={ () => { } } />
 		</View>
 	);
 
 	return (
-		<PageContainer scrollView>
+		<PageContainer>
 
-			<Header />
+			<View style={ style.controls }>
 
-			{ topComponent() }
+				{ dots() }
 
-			{ mainComponent() }
+			</View>
+
+			<View style={ { paddingLeft: 30 } }>
+
+				<Header />
+
+			</View>
+
+			<FlatList
+				data={ data }
+				renderItem={ renderer }
+				ref={ (slider) => {
+					listViewRef = slider;
+				} }
+				keyExtractor={ (_, index) => index }
+				horizontal={ true }
+				pagingEnabled={ true }
+				showsHorizontalScrollIndicator={ false }
+				onScroll={ slideChanged }
+				scrollEnabled={ true }
+				getItemLayout={ (_, index) => ({
+					length: windowWidth,
+					offset: windowWidth * index,
+					index,
+				}) }
+			/>
 
 		</PageContainer>
 	);

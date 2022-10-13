@@ -51,7 +51,7 @@ const ResetPassword = () => {
 	);
 
 	return (
-		<PageContainer>
+		<PageContainer padding={ 30 }>
 
 			<Header />
 

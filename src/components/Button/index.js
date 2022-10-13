@@ -8,15 +8,15 @@ const DefaultButton = (props) => {
 	return (
 		<TouchableOpacity
 			style={
-				[
-					style.buttonWrap,
-					{
-						width: props.width,
-						alignSelf: props.position
-					}
+				[style.buttonWrap,
+				{
+					width: props.width,
+					alignSelf: props.position
+				}
 				]
 			}
-			onPress={ props.onPress}>
+			disabled={ props.disabled }
+			onPress={ props.onPress }>
 
 			<Text style={ style.button }>{ props.title }</Text>
 

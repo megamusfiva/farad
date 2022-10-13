@@ -1,19 +1,19 @@
-import React from 'react';
+import { React } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-import { Header, InputField, PageContainer, CustomButton } from '../../components';
+import { InputField, CustomButton } from '../../components';
 import Navigation from '../../helpers/Navigation';
 
 import style from './style';
 
-const Register = () => {
+const Register = ({ title, desc, addTodo }) => {
 
 	const topComponent = () => (
 		<View style={ style.top }>
 
-			<Text style={ style.title }>Enter Your Phone Number</Text>
+			<Text style={ style.title }>{ title }</Text>
 
-			<Text style={ style.titleThin }>Sign up with your phone number</Text>
+			<Text style={ style.titleThin }>{ desc }</Text>
 
 		</View>
 	);
@@ -26,7 +26,11 @@ const Register = () => {
 				placeholder={ 'Enter your phone number' }
 				type={ 'numeric' } />
 
-			<CustomButton.DefaultButton title={ 'Continue' } onPress={ () => { Navigation.push('Verify', {}); } } />
+			<CustomButton.DefaultButton
+				title={ 'Continue' }
+				onPress={ addTodo }
+			/>
+
 		</View>
 	);
 
@@ -46,9 +50,7 @@ const Register = () => {
 	);
 
 	return (
-		<PageContainer>
-
-			<Header />
+		<View style={ style.container }>
 
 			{ topComponent() }
 
@@ -56,7 +58,7 @@ const Register = () => {
 
 			{ bottomComponent() }
 
-		</PageContainer>
+		</View>
 	);
 };
 

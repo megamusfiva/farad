@@ -2,43 +2,31 @@ import Colors from "../../constants/Colors";
 
 export default {
 
-	top: {
-		paddingTop: 10
-	},
-
-	title: {
-		fontSize: 25,
-		fontWeight: '700',
-		color: Colors.text.black,
-	},
-
-	titleThin: {
-		color: Colors.text.grey,
-		paddingTop: 10
-	},
-
-	bottom: {
-		color: Colors.text.grey,
-		fontWeight: 'bold',
-		fontSize: 15
-	},
-
-	signin: {
-		color: Colors.text.green,
-		fontWeight: 'bold',
-		fontSize: 15
-	},
-
-	sosmedCard: {
-		paddingVertical: 20,
+	controls: {
+		position: 'absolute',
+		width: '10%',
+		top: 25,
+		right: 30,
 		flexDirection: 'row',
-		justifyContent: 'center'
 	},
 
-	textCenter: {
-		color: Colors.text.grey,
-		alignSelf: 'center',
-		paddingBottom: 20
+	dotGroup: {
+		flex: 1,
+		flexDirection: 'row',
+		justifyContent: 'center',
+	},
+
+	dot: {
+		width: 4,
+		height: 4,
+		borderRadius: 10,
+		marginHorizontal: 2,
+		backgroundColor: '#DDD'
+	},
+
+	dotActive: {
+		width: 20,
+		backgroundColor: Colors.text.green,
 	},
 
 };

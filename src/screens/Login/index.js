@@ -59,7 +59,7 @@ const Login = () => {
 
 			<Text style={ style.bottom }>Don’t have an account?</Text>
 
-			<TouchableOpacity onPress={ () => { Navigation.replace('Register', {}); } }>
+			<TouchableOpacity onPress={ () => { Navigation.replace('SignUp', {}); } }>
 
 				<Text style={ style.forgot }> Sign Up Here</Text>
 
@@ -69,7 +69,7 @@ const Login = () => {
 	);
 
 	return (
-		<PageContainer>
+		<PageContainer padding={ 30 }>
 
 			<Header />
 

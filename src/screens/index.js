@@ -5,6 +5,7 @@ import Verify from './Verify';
 import SignUp from './SignUp';
 import ForgotPassword from './ForgotPassword';
 import ResetPassword from './ResetPassword';
+import ProfileDetail from './ProfileDetail';
 
 export {
 	Login,
@@ -13,5 +14,6 @@ export {
 	Verify,
 	SignUp,
 	ForgotPassword,
-	ResetPassword
+	ResetPassword,
+	ProfileDetail
 };
