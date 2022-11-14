@@ -12,7 +12,8 @@ import {
 	SignUp,
 	ForgotPassword,
 	ResetPassword,
-	ProfileDetail
+	ProfileDetail,
+	Drawers
 } from '../screens';
 
 const Stack = createNativeStackNavigator();
@@ -56,7 +57,11 @@ const MainRouter = ({ onboarded }) => {
 
 				<Stack.Screen name="ProfileDetail" component={ ProfileDetail } />
 
+				<Stack.Screen name="Drawers" component={ Drawers } />
+
 			</Stack.Navigator>
+
+
 
 		</NavigationContainer>
 	);

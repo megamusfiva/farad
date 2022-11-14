@@ -6,6 +6,7 @@ import SignUp from './SignUp';
 import ForgotPassword from './ForgotPassword';
 import ResetPassword from './ResetPassword';
 import ProfileDetail from './ProfileDetail';
+import Drawers from './Drawer';
 
 export {
 	Login,
@@ -15,5 +16,6 @@ export {
 	SignUp,
 	ForgotPassword,
 	ResetPassword,
-	ProfileDetail
+	ProfileDetail,
+	Drawers
 };

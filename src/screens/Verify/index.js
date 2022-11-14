@@ -10,8 +10,8 @@ import { CustomButton } from '../../components';
 
 import style from './style';
 
-const Verify = ({ title, desc, addTodo }) => {
-
+const Verify = ({ title, desc, addTodo, navigation }) => {
+	console.log("navigation>>", navigation);
 	const [isPinReady, setIsPinReady] = useState(false);
 	const otp1 = useRef();
 	const otp2 = useRef();

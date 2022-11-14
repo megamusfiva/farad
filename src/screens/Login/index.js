@@ -37,7 +37,7 @@ const Login = () => {
 
 			</TouchableOpacity>
 
-			<CustomButton.DefaultButton title={ 'Sign In' } />
+			<CustomButton.DefaultButton title={ 'Sign In' } onPress={ () => { Navigation.reset('Drawers', {}); } } />
 
 			<Text style={ style.textCenter }>or sign in with</Text>
 
